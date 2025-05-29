@@ -3,6 +3,8 @@ import 'core.dart';
 
 /// 事件控制器基类，继承自 GetxController，自动管理事件订阅
 abstract class BaseEventLogic extends GetxController {
+  /// 事件订阅列表
+  ///
   final List<Worker> _subscriptions = [];
 
   @mustCallSuper

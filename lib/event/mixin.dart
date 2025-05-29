@@ -1,7 +1,7 @@
 import 'event.dart';
 import 'bus.dart';
 import 'package:get/get.dart';
-
+/// 事件订阅混入
 mixin EventSubscriberMixin on GetxController {
   final List<Worker> _subscriptions = [];
 

@@ -12,7 +12,7 @@ class EventBus extends GetxController {
     if (!_eventStreams.containsKey(event.type)) {
       _eventStreams[event.type] = Rx<Event?>(null);
     }
-    Log.d('发出事件:\n事件名：{${event.type}},\n事件数据：{${event.data}}');
+    Log.d('发出事件:\n事件名：${event.type},\n事件数据：${event.data}');
     _eventStreams[event.type]!.value = event;
   }
 

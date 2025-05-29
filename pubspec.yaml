@@ -13,6 +13,7 @@ dependencies:
   plugin_platform_interface: ^2.0.2
   logger: ^2.5.0
   get: ^4.7.2
+  easy_refresh: ^3.4.0
 
 dev_dependencies:
   flutter_test:
