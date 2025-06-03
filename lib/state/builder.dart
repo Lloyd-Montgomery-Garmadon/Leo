@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leo/core.dart';
+import 'package:leo/global/state_widgets.dart';
+
 /// 状态管理
 abstract class BaseStateWidget<T, C extends BaseStateLogic<T>>
     extends StatelessWidget {
@@ -11,29 +13,17 @@ abstract class BaseStateWidget<T, C extends BaseStateLogic<T>>
   Widget buildState(BuildContext context, T data);
 
   /// 可选：加载中页面
-  Widget buildLoading(BuildContext context) =>
-      const Center(child: CircularProgressIndicator());
+  Widget buildLoading(BuildContext context) => GlobalStateWidgets.loadingWidget;
 
   /// 可选：空页面
-  Widget buildEmpty(BuildContext context) => const Center(child: Text('暂无数据'));
+  Widget buildEmpty(BuildContext context) => GlobalStateWidgets.emptyWidget;
 
   /// 可选：错误页面
   Widget buildError(
     BuildContext context,
     String errorMessage,
     VoidCallback retry,
-  ) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('出错了：$errorMessage'),
-          const SizedBox(height: 10),
-          ElevatedButton(onPressed: retry, child: const Text('重试')),
-        ],
-      ),
-    );
-  }
+  ) => GlobalStateWidgets.errorBuilder(context, errorMessage, retry);
 
   @override
   Widget build(BuildContext context) {

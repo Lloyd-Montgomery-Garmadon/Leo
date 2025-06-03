@@ -21,7 +21,7 @@ abstract class BaseListLogic<T> extends BaseStateLogic<List<T>> {
     page = 1;
     hasMore = true;
     try {
-      final list = await loadListData(page);
+      final list = await loadListData(page,pageSize);
       if (list.isEmpty) {
         setEmpty();
         refreshController.finishRefresh(IndicatorResult.success);
@@ -42,7 +42,7 @@ abstract class BaseListLogic<T> extends BaseStateLogic<List<T>> {
   Future<void> loadMore() async {
     if (!hasMore) return;
     try {
-      final list = await loadListData(page);
+      final list = await loadListData(page,pageSize);
       if (list.isEmpty || list.length < pageSize) {
         hasMore = false;
         refreshController.finishLoad(IndicatorResult.noMore);
@@ -60,7 +60,7 @@ abstract class BaseListLogic<T> extends BaseStateLogic<List<T>> {
   }
 
   /// 子类实现：加载指定页码数据
-  Future<List<T>> loadListData(int page);
+  Future<List<T>> loadListData(int page,int pageSize);
 
   /// 子类实现：加载第一页数据
   @override
