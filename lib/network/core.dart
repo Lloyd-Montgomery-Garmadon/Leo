@@ -1,2 +1,2 @@
-export 'config.dart';
-export 'dio.dart';
+export 'http/config.dart';
+export 'http/dio.dart';

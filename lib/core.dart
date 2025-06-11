@@ -6,4 +6,4 @@ export 'app/core.dart';
 export 'global/core.dart';
 export 'utils/core.dart';
 export 'network/core.dart';
-export 'package:flutter_screenutil/flutter_screenutil.dart';
+

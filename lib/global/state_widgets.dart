@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../core.dart';
+
 class GlobalStateWidgets {
   static Widget loadingWidget = Scaffold(
-    body: Scaffold(
-      body: const Center(child: CircularProgressIndicator()),
-    ),
+    body: Scaffold(body: const Center(child: CircularProgressIndicator())),
   );
   static Widget emptyWidget = Scaffold(
     body: Center(
@@ -43,6 +43,7 @@ class GlobalStateWidgets {
     Widget? empty,
     Widget Function(BuildContext, String, VoidCallback)? error,
   }) {
+    Get.put(EventBus());
     if (loading != null) loadingWidget = loading;
     if (empty != null) emptyWidget = empty;
     if (error != null) errorBuilder = error;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leo/core.dart';
 
-class BaseGetMaterialApp extends StatelessWidget {
+class LeoMaterialApp extends StatelessWidget {
   final Widget home;
   final String? baseUrl;
 
@@ -28,7 +28,7 @@ class BaseGetMaterialApp extends StatelessWidget {
   final ThemeMode? themeMode;
   final bool debugShowCheckedModeBanner;
 
-  BaseGetMaterialApp({
+  LeoMaterialApp({
     super.key,
     required this.home,
     this.loadingWidget,

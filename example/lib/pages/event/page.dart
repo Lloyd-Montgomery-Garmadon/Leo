@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:leo/core.dart';
 import 'logic.dart';
-class PageOne extends StatelessWidget {
-  PageOne({super.key});
+class EventTestPage extends StatelessWidget {
+  EventTestPage({super.key});
 
   final MyController ctrl = Get.put(MyController());
 
